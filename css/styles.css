@@ -1,0 +1,372 @@
+:root {
+    --bgimg: url(../img/cross.svg);
+
+    --clrwhite: #FCFBE5;
+    --clrlion: #FFA76A;
+    --clrbrown: #5A4200;
+    --clrblack: #130A00;
+} 
+
+body {
+    background-color: var(--clrwhite);  
+    margin: 0;
+    background-image: url(../img/tg_bg.png)
+}
+
+body > h1 {
+    text-align: center;
+}
+
+h1, h2, h3, h4 {
+    color: var(--clrblack); 
+    font-family: 'Avenir Next LT Pro', sans-serif;
+}
+
+p {
+    color: var(--clrblack);
+    font-family: 'Avenir', sans-serif;
+}
+
+/* Buttons */
+
+.btnContainer {
+    width: 9vw;
+    max-width: 100px;
+    position: absolute;
+    right: 0;
+    font: 17px 'Avenir', sans-serif;
+    color: var(--clrwhite);
+}
+
+.btnContainer > button {
+    width: 80px;
+    height: 80px;
+    margin: 0 0 5px 0;
+    background-color: #6ea23e;
+}
+
+button:focus-visible {
+    outline: none;
+} 
+
+button:not(.grid-container > button){
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(255, 255, 255, 0);
+    border: 0px solid white;
+    border-radius: 18px;
+    box-shadow: 0px 1px 1px 1px #0000006e;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+button.disabled {
+    opacity: 0.5;
+}
+
+button:hover:not(:disabled):not(.grid-container > button){
+    transform: scale(1.1);
+    box-shadow: 0px 3px 3px 2px #0000006e;
+    cursor: pointer;
+}
+
+/* Highlight appearance of buttons */
+.btn_highlight_anm {
+    animation: btn_highlight 1s ease-in-out;
+    animation-iteration-count: 3;
+}
+
+@keyframes btn_highlight {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* ## Left area ## */
+.left-area {
+    width: 45vw;
+    margin-left: 5vw;
+    text-align: center;
+    height: 100vh;
+}
+
+.header-img {
+    margin: auto;
+    margin-top: 30px;
+    width: 20rem;
+    z-index: 2;
+}
+
+/* Map */
+.mapContainer {
+    width: 45vw;
+    min-height: 400px;
+    height: calc(35vw*(3/4));
+    position: relative;
+}
+
+.grid-container {
+    display: grid;
+    background-image:url(../img/tg_kaart_1.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    position: absolute;
+
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    width: 37vw;
+    aspect-ratio: 4/3;
+}
+.grid-item {
+    border: 1px solid rgba(120, 60, 30, 0.3);
+    background-color: rgba(60, 54, 86, 0);
+    text-align: center;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+}
+
+.grid-item:hover {
+    background-image:var(--bgimg);
+    box-sizing: border-box;
+    border: 1px solid rgba(120, 60, 30, 0.6);
+}
+
+/* Avatar */
+.avatarContainer {
+    margin-top: 3rem;
+    position: relative;
+    font: 20px 'Avenir', sans-serif;
+}
+
+.speech-bubble {
+    float: left;
+    position: relative;
+    background: var(--clrwhite);
+    border-radius: 1.6rem;
+    min-width: 40vw;
+    min-height: 300px;
+    padding: 10px 2.5vw;
+    display: inline-block;
+    text-align: left;
+    box-shadow: #0000006e 0px 5px 13px, inset 0 -20px 1px #7bc97a;
+}
+
+.avatarContainer > .speech-bubble > img {
+    width: 27%;
+    max-height: 95%;
+    position: absolute;
+    bottom: 0;
+}
+
+/* ## Right area ## */
+
+.right-area {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    width: 45vw;
+    text-align: center;
+}
+
+/* Buttons */
+
+.right-area > .btnContainer {
+    min-width: 100%;
+    top: 10px;
+    position: relative;
+}
+
+.right-area > .btnContainer > button {
+    margin: 0 2%;
+    box-shadow: #0000006e 0px 1px 1px 1px, inset 0 -10px 1px rgba(67, 48, 34, 0.5), inset 0 0px 3px 3px rgba(255, 231, 214, 0.5);
+    background-color: var(--clrlion);
+}
+
+.right-area > .btnContainer > button:hover:not(:disabled) {
+    box-shadow: 0px 3px 3px 2px #0000006e, inset 0 -10px 1px rgba(67, 48, 34, 0.5), inset 0 0px 3px 3px rgba(255, 231, 214, 0.5) !important;
+}
+
+.right-area > .btnContainer > button.selected {
+    transform: scale(1.1);
+    box-shadow: #0000006e 0px 1px 1px 1px, inset 0 0 1px 2px rgb(255 167 106), inset 0 0px 3px 3px rgba(255, 231, 214, 0.5);
+}
+
+.right-area > .btnContainer > button > img {
+    float: left;
+    margin-top: -50px;
+    margin-left: -20px;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: transform 0.1s ease-out;
+}
+
+.right-area > .btnContainer > button:disabled > img {
+    opacity: 0%;
+}
+
+.right-area > .btnContainer > button:hover > img {
+    transform: scale(1.1);
+    left: -12px;
+    top: -9px;
+}
+
+/* Sources */
+
+.right-area > .src {
+    position: absolute;
+    border-radius: 15px;
+    background-color: var(--clrwhite);
+    width: 40rem;
+    max-width: 80%;
+    padding: 10px;
+    float: left;    
+    z-index: 2;
+    animation: unfold 0.2s linear;
+    box-shadow: #0000006e 0px 5px 13px, inset 0 -20px 1px var(--clrlion);
+}
+
+@keyframes unfold {
+    0% {
+        transform: scale(0);
+        top: -180px;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.right-area > .src:hover {
+    z-index: 3;
+}
+
+.right-area > .src > .exitcross {
+    position: absolute;
+    box-sizing: border-box;
+    background-image: url(../img/tg_btn_exit.svg);
+    top: -8px;
+    right: -8px;
+    border-radius: 50%;
+    z-index: 1;
+    width: 60px;
+    height: 60px;
+    box-shadow: 0px 1px 1px 1px #0000006e;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+}
+
+.right-area > .src > .exitcross:hover {
+    box-shadow: 0px 2px 2px 2px #0000006e;
+}
+
+.right-area > .src > p {
+    margin-top: 8px;
+}
+
+.right-area > .src > img{
+    width: -webkit-fill-available;
+    border-radius: 10px;
+}
+
+/* Identification window: the little window that appears when */
+
+#idWindow {
+    position: absolute;
+    bottom: 91px;
+    left: 0;
+    right: 15px;
+    margin: auto;
+    border-radius: 15px;
+    background-color: var(--clrwhite);
+    max-width: 700px;
+    padding: 20px;  
+    z-index: 8;
+    box-shadow: 2px 2px 5px 2px rgba(77, 77, 77, 0.44);
+}
+
+#idWindow > button {
+    background-image: url(../img/tg_btn_src.svg);
+    float: right;
+    height: 80px;
+    width: 120px;
+    margin: 0 5px;
+    border-radius: 22px;
+    box-shadow: 0px 2px 2px 2px #0000006e
+}
+
+#idWindow > div {
+    max-width: 80px;
+    width: 10%;
+    aspect-ratio: 1/1;
+    background-color: var(--clrwhite);
+    border: 3px solid var(--clrwhite);
+    margin: 0 5px;
+    border-radius: 10px;
+    float: left;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+#idWindow > div:not(.example_evidence)::after {
+    position: absolute;
+    content: "";
+    background-image: url(../img/tg_btn_exit.svg);
+    width: 40px;
+    height: 40px;
+    font-size: 175px;
+    text-align: center;
+    top: -15px;
+    left: -15px;
+    color: var(--clrlion);
+    transition: transform 0.1s ease-out; 
+}
+
+#idWindow > div:hover:not(.example_evidence)::after {
+    transform: scale(1.2);
+}
+
+#idWindow > div.example_evidence {
+    opacity: 0.8;
+    border: 3px dashed var(--clrlion);
+}
+
+/* treasure chest */
+.revealAnm {
+    position: absolute;
+    left: 0;
+    width: 800px;
+    right: 0;
+    top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    z-index: 2;
+    animation: chest_reveal 2s linear;
+}
+
+.revealAnm > button {
+    background-image: url(../img/tg_btn_rapport.svg); 
+    width: 120px; 
+    height: 80px;
+    
+}
+
+@keyframes chest_reveal {
+    0% {
+        transform: translateX(-70%) scale(0);
+    }
+    100% {
+        transform: translateX(0) scale(1);
+    }
+}
