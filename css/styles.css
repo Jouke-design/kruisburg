@@ -3,7 +3,6 @@
 
     --clrwhite: #FCFBE5;
     --clrlion: #FFA76A;
-    --clrbrown: #5A4200;
     --clrblack: #130A00;
 } 
 
@@ -297,7 +296,7 @@ button:hover:not(:disabled):not(.grid-container > button){
 }
 
 #idWindow > button {
-    background-image: url(../img/tg_btn_src.svg);
+    background-image: url(../img/tg_btn_src.png);
     float: right;
     height: 80px;
     width: 120px;
@@ -357,7 +356,7 @@ button:hover:not(:disabled):not(.grid-container > button){
 }
 
 .revealAnm > button {
-    background-image: url(../img/tg_btn_rapport.svg); 
+    background-image: url(../img/tg_btn_rapport.png); 
     width: 120px; 
     height: 80px;
     
