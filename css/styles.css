@@ -277,6 +277,7 @@ button:hover:not(:disabled):not(.grid-container > button){
 .right-area > .src > img{
     width: -webkit-fill-available;
     border-radius: 10px;
+    width: -moz-available;
 }
 
 /* Identification window: the little window that appears when */
